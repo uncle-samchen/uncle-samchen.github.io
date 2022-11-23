@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body    { background-image:url("/Users/weichengchen/Desktop/lab2/1.jpeg");}
+		h1    	{ color: crimson;
+				 margin-left: 20px;
+				 font-family:fantasy;}
+		h2, em  { color: grey;
+				margin-left: 10px;
+				font-family:cursive }
+		h3, em  { color: darkslategrey;
+				 margin-left: 10px;
+				 font-family: arial, helvetica}
+		em    	{ font-weight: bold;font-size: 15pt
+				;color: lightcyan;}
+		p    	{ font-size: 10pt; font-family: arial, san-serif; color:blue; 	font-weight: bold;}
+		.cool{ color:purple;}
+		span	{ color: black; text-decoration: underline;-through;}
+		.extra span { color: inherit; }
+	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab_2</title>
+ 
+ </head>
+
+<body>
+	<h1>New HTML5 Input Types Demo</h1>
+	<div class = extra><h3>This form demonstrates <span>the new HTML5</span> input types and the placeholder, required and autofocus attributes.</h3></div>
+	<label><em>Color:
+		<input type="color" autofocus>
+		(Hexadecimal code such as #ADD8E6)
+	</em>
+	</label>
+	<label><p class="cool">Date:</label>
+	<input type="date" id="Date" name="date"
+	value="2021-11-30"
+	min="2021-11-01" max="2021-11-30">
+	(yyyy-mm-dd)
+	</p>
+	</label>
+
+	<label><p>Email:
+		<input type="email" name="email" placeholder="name@domain.com" required>
+		(name@domain.com)
+	</p>
+	</label>
+
+	<label><p class = cool>Number:
+		<input type="number" id="quantity" name="Number" min="0" max="7" value="4">
+		(Enter a number between 0 and 7)
+	</p>
+	</label>
+
+	<label for="vol">Range:
+		<input type="range" id="vol" name="range" min="'0" max="20">
+	</label>
+	<br>
+	<label for="gsearch">Search:
+		<input type="text" id="search1" name="search1" placeholder="search query">
+	</label>
+	<br>
+	<label>Time:
+		<input type="time" id="appt" name="appt">
+		(hh:mm)
+	</label>
+	<br>
+	<input type="submit" value="Submit">
+	<input type="reset" value="Clear">
+	<p><a href="/Users/weichengchen/Desktop/Lab_2-2.html">Go to page2</a></p>
+
+</body>
+</html>
