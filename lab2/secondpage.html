@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body    { background-color: lightslategrey;}
+		h1    	{ color: white;
+				 margin-left: 10px}
+		li em   {text-decoration: underline; color: yellow;}
+		em    	{ font-weight: bold;font-size: 15pt
+				;color: lightcyan;}
+		p    	{ font-size: 15pt; font-family: arial, san-serif; color:blue; 			font-weight: bold;}
+		.special{ color:purple;}
+	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab_2-2</title>
+</head>
+
+<body>
+	<h1>New HTML5 Input Types Demo-2</h1>
+	<h3>This form demonstrates the new HTML5 input types and the placeholder, required and autofocus attributes.</h3>
+	<ul>
+		<li><em>Color:
+	<input type="color" autofocus>
+		(Hexadecimal code such as #ADD8E6)
+	</em></li>
+	<label><li><em>Date:</label>
+	<input type="date" id="Date" name="date"
+	value="2021-11-30"
+	min="2021-11-01" max="2021-11-30">
+	(yyyy-mm-dd)
+	</em></li>
+	</label>
+
+	<label><li><em>Email:
+		<input type="email" name="email" placeholder="name@domain.com" required>
+		(name@domain.com)
+	</em></li></ul>
+	</label>
+
+	<label><em>Number:
+		<input type="number" id="quantity" name="Number" min="0" max="7" value="4">
+		(Enter a number between 0 and 7)
+	</em>
+	</label>
+
+	<label for="vol">Range:
+		<input type="range" id="vol" name="range" min="'0" max="20">
+	</label>
+	<br>
+	<label for="gsearch"><p class = special>Search:
+		<input type="text" id="search1" name="search1" placeholder="search query">
+	</p></label>
+	<br>
+	<label><p class = special>Time:
+		<input type="time" id="appt" name="appt">
+		(hh:mm)
+	</p></label>
+	<br>
+	<input type="submit" value="Submit">
+	<input type="reset" value="Clear">
+	<p><a href="/Users/weichengchen/Desktop/Homework2.html">Go to page3</a></p>
+
+</body>
+</html>
