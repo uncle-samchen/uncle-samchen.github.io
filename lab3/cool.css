@@ -1,0 +1,33 @@
+h1	 { color: rosybrown;
+		text-align: center;
+		font-family:monospace;
+		font-weight: bold; }
+h2	 { color:seashell; text-align: center;}
+p    { color:rosybrown; font-family: monospace,sans-serif; font-size: 15pt;
+		text-align: center; background-color: saddlebrown; padding: 10px 10px 10px 10px;}
+.image  { text-align: center;}
+nav 			{ font-weight: bold;
+				color: seashell;
+				text-align: center;
+				width: 10em;
+				background-color: peru;
+				font-family: monospace;}
+nav ul 			{ display: none;
+								list-style: none;
+						margin: 0;
+					  	padding: 0;
+					  	top: 4.5ex;
+					  	left: 140ex;
+						width: 30em;
+					  	position: absolute;
+			  	}
+.navbar			{ display: none;
+				color: springgreen;}
+nav:hover ul    { display: block;}
+nav ul li 		{ border-right: 2px solid saddlebrown;
+				background: tan; 
+				width: 10em; 
+				padding: 20px 5px 20px 5px;
+				margin: 5%;}
+nav ul li:hover { background-color: sienna; }
+a 				{ text-decoration: none; color: seashell; font-weight: bold;}
