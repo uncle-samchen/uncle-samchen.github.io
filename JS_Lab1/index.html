@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>exercise2</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var num1, num2;
+	num1  = window.prompt("Please enter your first number:");
+	num2  = window.prompt("Please enter your second number:");
+	 if(num1 > num2){
+	 	document.body.style.backgroundColor = 'lightblue';
+	 	document.write("firstInput > secondInput");
+
+	 } else if(num1 < num2){
+	 	document.body.style.backgroundColor = 'lightgreen';
+	 	document.write("secondInput > firstInput");
+
+	 } else{
+	 	document.body.style.backgroundColor = 'lightyellow';
+	 	document.write("firstInput == secondInput");
+
+	 }
+</script>
+<br>
+<input type="button" value="1st input" onclick="alert(num1)">
+<input type="button" value="2nd input" onclick="alert(num2)">
+
+</body>
+</html>
