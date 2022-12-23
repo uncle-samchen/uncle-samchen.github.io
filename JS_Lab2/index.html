@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		table  			{ width: 350px;
+						border-collapse: collapse;
+						background-color: lightblue;}
+		table, td, th   { border: 1px solid black;
+						padding: 5px}
+		th              { color: white; 
+						background-color: darkblue;}
+	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<img id="d1" src = "die1.png" alt="blank image">
+	<img id="d2" src = "die1.png" alt="blank image">
+	<img id="d3" src = "die1.png" alt="blank image">
+	<img id="d4" src = "die1.png" alt="blank image">
+	<img id="d5" src = "die1.png" alt="blank image">
+	<img id="d6" src = "die1.png" alt="blank image">
+	<br>
+	<img id="d7" src = "die1.png" alt="blank image">
+	<img id="d8" src = "die1.png" alt="blank image">
+	<img id="d9" src = "die1.png" alt="blank image">
+	<img id="d10" src = "die1.png" alt="blank image">
+	<img id="d11" src = "die1.png" alt="blank image">
+	<img id="d12" src = "die1.png" alt="blank image">
+	<form action="#">
+		<input id="rollButton" type="button" value="Roll Dice">
+	</form>
+	<div id="frequencyTableDiv"></div>
+
+<script type="text/javascript">
+	// 各face出現頻率初始值
+	var fre1 = 0;
+	var fre2 = 0;
+	var fre3 = 0;
+	var fre4 = 0;
+	var fre5 = 0;
+	var fre6 = 0;
+	var Total = 0; // 初始值為0，執行第一回後變為12
+
+	function start(){
+		var button = document.getElementById("rollButton");
+		button.addEventListener("click", rollDice, false);
+		die1Image = document.getElementById("d1");
+		die2Image = document.getElementById("d2");
+		die3Image = document.getElementById("d3");
+		die4Image = document.getElementById("d4");
+		die5Image = document.getElementById("d5");
+		die6Image = document.getElementById("d6");
+		die7Image = document.getElementById("d7");
+		die8Image = document.getElementById("d8");
+		die9Image = document.getElementById("d9");
+		die10Image = document.getElementById("d10");
+		die11Image = document.getElementById("d11");
+		die12Image = document.getElementById("d12");
+	}
+
+	//roll the dice
+	function rollDice(){
+		var face;
+		for(var i = 1; i <= 12; ++i){
+			face = Math.floor(1 + Math.random() * 6); // 1~6亂數
+			setImage(i, face); //記錄每一次不同的數字的face、摋骰子（改圖片）
+			tallyRolls(face); //加總每一次face的frequency
+			++Total; // 加總每一次total的次數，執行12次，即每執行一次加12
+		}
+		updateFrequencyTable(); //執行一次update一次表格
+
+	}
+
+	//set image source for a dice
+	function setImage(dieNumber, face){
+		var dieImage = document.getElementById("d" + dieNumber);
+		dieImage.setAttribute("src", "die" + face + ".png");
+		dieImage.setAttribute("alt", "die image with " + face + " spot(s) ");
+
+	}
+
+	//increment appropriate frequency counter
+	function tallyRolls(face){
+		switch(face){
+			case 1: //face=1時，frequency1增加
+				++fre1;
+				break;
+			case 2:
+				++fre2;
+				break;
+			case 3:
+				++fre3;
+				break;
+			case 4:
+				++fre4;
+				break;
+			case 5:
+				++fre5;
+				break;
+			case 6:
+				++fre6;
+				break;
+		}
+
+	}
+
+	function updateFrequencyTable(){
+		var tableDiv = document.getElementById("frequencyTableDiv");
+
+		tableDiv.innerHTML = "<table>" + 
+							"<caption><b>Die Rolling Frequencies</b></caption>" + "<thead><th>Face</th><th>Frequency</th>" + "<th>Percent</th></thead>" +
+							"<tbody<tr><td>1</td><td>" + fre1 + "</td><td>" + Math.round((fre1/Total)*10000) / 100 + "%" + "</td></tr>" + 
+							"<tbody<tr><td>2</td><td>" + fre2 + "</td><td>" + Math.round((fre2/Total)*10000) / 100 + "%" + "</td></tr>" + 
+							"<tbody<tr><td>3</td><td>" + fre3 + "</td><td>" + Math.round((fre3/Total)*10000) / 100 + "%" + "</td></tr>" + 
+							"<tbody<tr><td>4</td><td>" + fre4 + "</td><td>" + Math.round((fre4/Total)*10000) / 100+ "%" + "</td></tr>" + 
+							"<tbody<tr><td>5</td><td>" + fre5 + "</td><td>" + Math.round((fre5/Total)*10000) / 100+ "%" + "</td></tr>" + 
+							"<tbody<tr><td>6</td><td>" + fre6 + "</td><td>" + Math.round((fre6/Total)*10000) / 100 + "%" + "</td></tr>" + 
+							"</tbody></table>";
+	}
+
+	window.addEventListener("load", start, false);
+</script>
+</body>
+</html>
